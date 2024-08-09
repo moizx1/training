@@ -1,0 +1,16 @@
+Question 1. Can a messy codebase be maintained by adding more Staff? 
+Answer: No. 
+1) It will only overhead add to complexity & communication overhead
+2) New staff has to understand existing code first. 
+3) Key players are poor design, low coding standards and laziness
+
+Question 2. How consistent indentation style is a significant indicator of low bug density? 
+Answer: 
+1) Error Prevention :- Likelihood of low syntactical errors for example in languages like Python 
+2) Collaboration & Reviews: When team members follow some indentation style, code reviews become easy and efficient. 
+3) Automated Indentation: Checkstyle enforces consistent indentation.
+
+Question 3. What are code smells and why is it important for programmers to identify them? 
+Answer: Code smells indicate potential problems in the code that can lead to larger problems. Examples:- 
+- Long Methods -Solution: Refactoring 
+- Duplicated Code - Solution: Extracting a function or class from it.

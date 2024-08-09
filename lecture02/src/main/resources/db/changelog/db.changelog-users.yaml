@@ -1,0 +1,69 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-0.0.1
+      author: news team
+      changes:
+        - createTable:
+            tableName: users
+            columns:
+              - column:
+                  name: user_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+              - column:
+                  name: first_name
+                  type: varchar(50)
+              - column:
+                  name: last_name
+                  type: varchar(50)
+              - column:
+                  name: email
+                  type: varchar(100)
+              - column:
+                  name: username
+                  type: varchar(50)
+              - column:
+                  name: password
+                  type: varchar(250)
+              - column:
+                  name: roles
+                  type: varchar(50)
+              - column:
+                  name: created_at
+                  type: DATETIME
+        - addPrimaryKey:
+            tableName: users
+            columnNames: user_id
+            constraintName: users_pk
+  - changeSet:
+      id: data-0.0.1
+      author: news team
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: user_id
+                  value: '1'
+              - column:
+                  name: first_name
+                  value: Mark
+              - column:
+                  name: last_name
+                  value: Henry
+              - column:
+                  name: email
+                  value: mark@gmail.com
+              - column:
+                  name: username
+                  value: test1
+              - column:
+                  name: password
+                  value: "{bcrypt}$2a$12$v9IaVwmEwQ7O7GEKZcVNwOgtzj85HnYCOOOa3kZOOVyMEho1Nx7ie"
+              - column:
+                  name: roles
+                  value: admin
+              - column:
+                  name: created_at
+                  value: '2000-01-01T12:00:00'

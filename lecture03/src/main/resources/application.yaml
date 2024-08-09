@@ -1,0 +1,28 @@
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:news
+    username: test
+    password: test
+  jpa:
+    hibernate:
+      ddl-auto: none
+    open-in-view: false
+#  security:
+#    user:
+#      roles: user,admin
+#      name: test
+#      password: test
+
+api:
+  security:
+    ignored: /api/v1/news/bitcoin,/v3/api-docs,/v3/api-docs/**,/index.html,/index.js
+
+logging:
+  level:
+    '[org.springframework.security]': trace
+
+newsapi:
+  key: 885e0ba56ff7414b80f9cf01d6461e71

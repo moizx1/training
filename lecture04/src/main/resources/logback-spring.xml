@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml" />
+
+    <appender name="CONSOLE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <filter class="ch.qos.logback.classic.filter.ThresholdFilter">
+            <level>${CONSOLE_LOG_THRESHOLD}</level>
+        </filter>
+        <encoder>
+            <pattern>${CONSOLE_LOG_PATTERN}</pattern>
+            <charset>${CONSOLE_LOG_CHARSET}</charset>
+        </encoder>
+        <file>target/security.log</file>
+<!--        <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--            <fileNamePattern>target/security.log.%d{yyyy-MM-dd}.%i.gz}</fileNamePattern>-->
+<!--            <maxFileSize>5MB</maxFileSize>-->
+<!--            <maxHistory>7</maxHistory>-->
+<!--        </rollingPolicy>-->
+    </appender>
+
+    <logger name="org.springframework.security" level="info" additivity="false">
+        <appender-ref ref="CONSOLE" />
+    </logger>
+
+</configuration>
+
+
+<!--<configuration>-->
+<!--<include resource=-->
+<!--                 "org/springframework/boot/logging/logback/defaults.xml" />-->
+<!--<include resource=-->
+<!--                 "org/springframework/boot/logging/logback/file-appender.xml" />-->
+<!--<appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
+<!--    <file>target/security.log</file>-->
+
+<!--    &lt;!&ndash; Filter logs based on a threshold &ndash;&gt;-->
+<!--    <filter class="ch.qos.logback.classic.filter.ThresholdFilter">-->
+<!--        <level>ALL</level>-->
+<!--    </filter>-->
+
+<!--    &lt;!&ndash; Encoder pattern for log entries &ndash;&gt;-->
+<!--    <encoder>-->
+<!--        <pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>-->
+<!--        <charset>UTF-8</charset>-->
+<!--    </encoder>-->
+
+<!--    &lt;!&ndash; Rolling policy for log file management &ndash;&gt;-->
+<!--    <rollingPolicy class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">-->
+<!--        <fileNamePattern>target/security.log.%d{yyyy-MM-dd}.%i.gz</fileNamePattern>-->
+<!--        <maxFileSize>5MB</maxFileSize>-->
+<!--        <maxHistory>7</maxHistory>-->
+<!--    </rollingPolicy>-->
+<!--</appender>-->
+<!--<root level="INFO">-->
+<!--    <appender-ref ref="FILE" />-->
+<!--</root>-->
+<!--</configuration>-->

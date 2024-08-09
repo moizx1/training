@@ -1,0 +1,54 @@
+databaseChangeLog:
+  - changeSet:
+      id: schema-accounts
+      author: bank team
+      changes:
+        - createTable:
+            tableName: accounts
+            columns:
+              - column:
+                  name: account_id
+                  type: bigint
+                  constraints:
+                    nullable: false
+#              - column:
+#                  name: user_id
+#                  type: bigint
+              - column:
+                  name: account_type
+                  type: varchar(50)
+              - column:
+                  name: balance
+                  type: DECIMAL(15, 2)
+                  constraints:
+                    nullable: false
+                    defaultValue: 0.00
+              - column:
+                  name: created_at
+                  type: DATETIME
+        - addPrimaryKey:
+            tableName: accounts
+            columnNames: account_id
+            constraintName: accounts_pk
+  - changeSet:
+      id: data-accounts
+      author: bank team
+      changes:
+        - insert:
+            tableName: accounts
+            columns:
+              - column:
+                  name: account_id
+                  value: '1000'
+#              - column:
+#                  name: user_id
+#                  value: '1'
+              - column:
+                  name: account_type
+                  value: current
+              - column:
+                  name: balance
+                  value: '100.2'
+              - column:
+                  name: created_at
+                  value: '2000-01-01T12:00:00'

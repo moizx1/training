@@ -1,0 +1,8 @@
+# lecture-be-02
+
+01. rest api development with swagger specifications
+02. spring boot starter web, data jpa
+03. rdbms, orm, table, columns, primary key, unique key, index, normalization, foreign key, foreign key index, separate table for lob storage, partitioning
+04. rest controller, service, repository
+05. db scripts automation with schema.sql, data.sql
+06. db scripts automation and versioning with liquibase
